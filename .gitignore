@@ -1,0 +1,8 @@
+frontend/node_modules
+frontend/dist
+frontend/src/app/secret.ts
+frontend/src/assets/food
+backend/node_modules
+
+backend/.gitignore
+

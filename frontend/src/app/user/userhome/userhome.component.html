@@ -1,0 +1,62 @@
+<app-user-nav></app-user-nav>
+<div *ngIf="loading; then thenBlock else myelseBlock"></div>
+<ng-template #thenBlock>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #myelseBlock>
+  <!-- <main> -->
+  <section class="cards">
+
+
+
+    <!-- <div > -->
+
+    <div class="crd" *ngFor="let item of fooditems;index as i">
+      <div class="wrapper">
+        <div class="containerr">
+          <!-- http://localhost:3000/backend/uploads/1-10-2021-12-31-1-4.jpg -->
+          <div class="top">
+            <div class="top-img">
+              <img src="https://res.cloudinary.com/dcirexlcs/image/upload/v1677220158/grocery-assets/cover-removebg-preview_gxfpwp.png" alt="No image found">
+            </div>
+            <p>Your source of farm-fresh goodness</p>
+          </div>
+          <div class="bottom">
+            <div class="left">
+              <div class="details">
+                <h3>{{item.groceryname}}</h3>
+                <p>{{item.groceryprice}}₹</p>
+              </div>
+              <div *ngIf="item.groceryavail">
+                <div class="buy"><i class="material-icons" (click)="addtocart(item)">add_shopping_cart</i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inside">
+          <div class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></div>
+          <div class="contents">
+            <!-- hellp -->
+            <h2>Freshly</h2>
+            <h3>item name - {{item.groceryname}}</h3>
+            <h3>item price - {{item.groceryprice}}₹</h3>
+            <h3 *ngIf="!item.unlimited">
+              <div *ngIf="item.groceryavail; else elseBlock">Available Quantity - {{item.groceryqty}}</div>
+
+              <ng-template #elseBlock>
+                <div>this item is not available</div>
+              </ng-template>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- </div> -->
+
+  </section>
+
+  <div class="errors" *ngIf="errorMessage">
+    <app-message-box [message]="errorMessage" [styl]="styl"></app-message-box>
+  </div>
+</ng-template>
