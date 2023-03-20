@@ -12,8 +12,10 @@ export class AuthService {
   public msg: string = "";
   public count :any;
   // private baseUri: string ="http://localhost:3000";
+  private baseUri: string = environment.BACKEND_URL;
+
   // environment.heroku ? "https://appcanteen.herokuapp.com":
-  private baseUri: string = "https://freshly-backend-bq63.onrender.com";
+  // private baseUri: string = "https://freshly-backend-bq63.onrender.com";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 

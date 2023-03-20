@@ -18,6 +18,7 @@ export class UserhomeComponent implements OnInit {
   public errorMessage: any;
   public styl: any;
   public loading: any = true;
+  public groceryname: String;
   constructor(private authService: AuthService, private router: Router, private userService: UserService, private webSocketService: WebsocketService) { }
 
   ngOnInit(): void {
@@ -116,6 +117,11 @@ export class UserhomeComponent implements OnInit {
       }
     )
   }
+  getrecipe(groceryname: String){
+ 
+    this.userService.setData(groceryname);
+    this.router.navigate(['/recipe']); 
+  }
 
 
   setMessage(msg: any, color: any) {
@@ -128,3 +134,8 @@ export class UserhomeComponent implements OnInit {
     }, 4000);
   }
 }
+
+
+
+
+

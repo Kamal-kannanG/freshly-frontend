@@ -1,18 +1,30 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private gname = new BehaviorSubject<any>(null);
+  gname$ = this.gname.asObservable();
+
+  
+  setData(newGroceryname: any) {
+    this.gname.next(newGroceryname);
+  }
+
+
   public avail: boolean = false;
   public msg: string = "";
   public orderid:any;
   // private baseUri: string = environment.heroku ? "https://appcanteen.herokuapp.com/user/" : "http://localhost:3000/user/";
-  // private baseUri: string = "http://localhost:3000/user/";
-  private baseUri: string = "https://freshly-backend-bq63.onrender.com/user/";
+  private baseUri: string = environment.BACKEND_URL+'/user/';
+  // private baseUri: string = "https://freshly-backend-bq63.onrender.com/user/";
+ 
+  
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -36,6 +48,9 @@ export class UserService {
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });
+  }
+  getRecipe(groceryname:String){
+    return this.http.get(`https://api.edamam.com/search?q=${groceryname}&app_id=${environment.RECIPE_API_ID}&app_key=${environment.RECIPE_API_KEY}`, { headers: this.headers });
   }
 
   getCount()
@@ -98,4 +113,11 @@ export class UserService {
       headers: new HttpHeaders().append('Content-Type', 'application/json')
     });
   }
+
+
+  // getRecipe(String groceryname)
+  // {
+  //   return this.http.get(`https://api.edamam.com/search?q=${groceryname}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}`, { headers: this.headers });
+  // }
+
 }

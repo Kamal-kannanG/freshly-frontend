@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Acme');
+/* main content */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+h3,h2
+{
+  padding-top: 10px;
+  font-family:Acme, sans-serif;
+  color: #254053;
+}
+body {
+  background-color: #fff;
+}
+
+.recipes {
+    margin: 0 11.5% 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    /* grid-column: 2 / span 12; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .r-crd{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    border: 1px solid black;
+  }
+  /* .r-img{
+    
+  } */
+  .r-img img{
+    object-fit:cover;
+  }
+
+  .r-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .r-cusine-dishtype{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .ingredients{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media screen and (max-width: 768px) {
+
+    /* Adjust margins and paddings */
+    .recipes {
+      margin: 0 5%;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  
+    /* Make recipe cards stack on top of each other */
+    .r-crd{
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    /* Reduce image size */
+    .r-img img{
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Adjust font size */
+    h3,h2 {
+      font-size: 1.5rem;
+    }
+  
+    /* Adjust spacing */
+    .r-content {
+      gap: 10px;
+    }
+    
+    /* Adjust layout of cuisine and dish type */
+    .r-cusine-dishtype{
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+  

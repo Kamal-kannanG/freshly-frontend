@@ -27,6 +27,7 @@ import { EmptycartComponent } from './user/emptycart/emptycart.component';
 import { FeedbackComponent } from './user/feedback/feedback.component';
 import { MyordersComponent } from './user/myorders/myorders.component';
 import { MyprofileComponent } from './user/myprofile/myprofile.component';
+import { RecipeComponent } from './user/recipe/recipe/recipe.component';
 import { UserGuard } from './user/user.guard';
 import { UserhomeComponent } from './user/userhome/userhome.component';
 import { VieworderComponent } from './user/vieworder/vieworder.component';
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: 'myorders', component: MyordersComponent, canActivate: [UserGuard] },
   { path: 'vieworder', component: VieworderComponent, canActivate: [UserGuard] },
   { path: 'feedback', component: FeedbackComponent, canActivate: [UserGuard] },
+  { path: 'recipe', component: RecipeComponent, canActivate: [UserGuard] },
 
   // error
   { path: 'error', component: ServererrorComponent },

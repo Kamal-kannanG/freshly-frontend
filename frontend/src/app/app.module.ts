@@ -47,6 +47,7 @@ import { VieworderhistoryComponent } from './admin/vieworderhistory/vieworderhis
 import { FeedbackComponent } from './user/feedback/feedback.component';
 import { QrcodeComponent } from './admin/qrcode/qrcode.component';
 import { LoadingComponent } from './loading/loading/loading.component';
+import { RecipeComponent } from './user/recipe/recipe/recipe.component';
 // ***
 
 @NgModule({
@@ -87,6 +88,7 @@ import { LoadingComponent } from './loading/loading/loading.component';
     FeedbackComponent,
     QrcodeComponent,
     LoadingComponent,
+    RecipeComponent,
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,10 @@
 export const environment = {
   production: false,
   // heroku :true
+  // BACKEND_URL:'https://freshly-backend-bq63.onrender.com',
+  BACKEND_URL:'http://localhost:3000',
+  RECIPE_API_ID:'5ad7b9cb',
+  RECIPE_API_KEY:'6223859950386341a5f44c99e9732414',
 };
 
 /*

@@ -1,0 +1,59 @@
+<app-user-nav></app-user-nav>
+<div *ngIf="loading; then thenBlock else myelseBlock"></div>
+<ng-template #thenBlock>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #myelseBlock>
+
+
+    <section class="recipes">
+       
+            <!-- <div class="card mb-3" *ngFor="let item of hits;index as i" >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src={{item.recipe.image}} class="img-fluid rounded-start" alt="alt">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h3 class="card-title">{{item.recipe.label}}</h3>
+                      <p class="card-text">Cuisine Type: {{item.recipe.cuisineType}}</p>
+                      <p class="card-text">Dish Type: {{item.recipe.dishType}}</p>
+                      <h3>Ingredients:</h3>
+                        <div *ngFor="let ingredient of item.recipe.ingredientLines;index as i">
+                            <p>{{ingredient}}</p>
+                        </div>
+                        <a href={{item.recipe.url}}>
+                            <h3>Detailed Recipe</h3>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="r-crd"  *ngFor="let item of hits;index as i">
+                <div class="r-img">
+                  <img src={{item.recipe.image}} alt="recipe-img">
+                </div>
+                <div class="r-content">
+                  <div class="r-name">
+                    <h2>{{item.recipe.label}}</h2>
+                  </div>
+                  <div class="r-cusine-dishtype">
+                    <div class="r-c-d">
+                      <p>Cuisine Type: {{item.recipe.cuisineType}}</p>
+                      <p>Dish Type: {{item.recipe.dishType}}</p>
+                    </div>
+                    <div class="ingredients">
+                      <h2>Ingredients:</h2>
+                      <div *ngFor="let ingredient of item.recipe.ingredientLines;index as i">
+                        <p>{{ingredient}}</p>
+                      </div>
+                    </div>
+                    <a href={{item.recipe.url}}>
+                      <h2>Detailed Recipe</h2>
+                    </a>
+                  </div>
+                </div>
+              </div>
+       
+    </section>
+</ng-template>

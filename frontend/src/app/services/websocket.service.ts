@@ -10,7 +10,7 @@ export class WebsocketService {
   socket: any;
 
 
-  readonly url: string = "https://freshly-backend-bq63.onrender.com";
+  readonly url: string = environment.BACKEND_URL;
   // readonly url: string = "http://localhost:3000";
   // environment.heroku ? "https://appcanteen.herokuapp.com":
   constructor() {

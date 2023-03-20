@@ -14,7 +14,8 @@ export class AdminService {
   private food: any;
   public qrcode:any;
   // private baseUri: string = "http://localhost:3000/admin/";
-  private baseUri: string = "https://freshly-backend-bq63.onrender.com/admin/";
+  // private baseUri: string = "https://freshly-backend-bq63.onrender.com/admin/";
+  private baseUri: string = environment.BACKEND_URL+'/admin/';
 
   // environment.heroku ? "https://appcanteen.herokuapp.com/admin/" : 
   // private baseUri: string = "http://localhost:3000/admin/";
